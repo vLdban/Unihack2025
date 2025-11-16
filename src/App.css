@@ -1,0 +1,204 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Futuristic Grid Background */
+body {
+  background: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(142, 190, 100, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(142, 190, 100, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Glow effects for modern look */
+.glow-effect {
+  box-shadow: 0 0 20px hsla(142, 76%, 36%, 0.25), 
+              inset 0 0 20px hsla(142, 76%, 36%, 0.1);
+}
+
+/* Modern card enhancement */
+.card {
+  padding: 2em;
+  border: 1px solid hsla(142, 76%, 36%, 0.25);
+  background: linear-gradient(135deg, hsla(0, 0%, 100%, 0.95), hsla(140, 40%, 95%, 0.8));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Futuristic animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+.animate-spin {
+  animation: spin 4s linear infinite;
+}
+
+@keyframes bounce-horizontal {
+  0%, 100% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+}
+
+.animate-bounce-horizontal {
+  animation: bounce-horizontal 1s ease-in-out infinite;
+}
+
+@keyframes earth-rotate {
+  0% { transform: rotateZ(0deg); }
+  100% { transform: rotateZ(360deg); }
+}
+
+.animate-earth-rotate {
+  animation: earth-rotate 4s linear infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsla(142, 76%, 36%, 0.3); }
+  50% { box-shadow: 0 0 40px hsla(142, 76%, 36%, 0.5); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+@keyframes fall-leaves {
+  0% {
+    top: -20px;
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    top: 100vh;
+    opacity: 0;
+    transform: translateX(var(--drift)) rotateZ(360deg);
+  }
+}
+
+.falling-leaf {
+  position: fixed;
+  font-size: 2rem;
+  pointer-events: none;
+  z-index: 10;
+  animation: fall-leaves var(--duration) linear infinite;
+}
+
+.leaf-left {
+  left: 5%;
+  --drift: 20px;
+}
+
+.leaf-right {
+  right: 5%;
+  --drift: -20px;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, transparent, hsla(142, 76%, 36%, 0.25), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s infinite;
+}
+
+/* Modern button styling */
+button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(142, 76%, 36%, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+/* Gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(50 100% 50%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern border effect */
+.modern-border {
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, hsl(240 10% 8%), hsl(240 10% 12%)) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  border-image: linear-gradient(135deg, hsl(200 100% 50%), hsl(280 85% 55%)) 1;
+}
+
+/* Futuristic input styling */
+input, textarea, select {
+  background: hsl(0 0% 100%);
+  border: 1px solid hsla(142, 76%, 36%, 0.35);
+  color: hsl(240 10% 3.9%);
+  transition: all 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  background: hsl(0 0% 100%);
+  border-color: hsl(142 76% 36%);
+  box-shadow: 0 0 20px hsla(142, 76%, 36%, 0.25);
+  outline: none;
+}
+
+/* Logo and brand styling */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  filter: drop-shadow(0 0 2em hsla(142, 76%, 36%, 0.4));
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 20px hsla(142, 76%, 36%, 0.6)) drop-shadow(0 0 40px hsla(50, 100%, 50%, 0.4));
+  animation: float 1s ease-in-out;
+}
+
+.read-the-docs {
+  color: hsl(210 15% 65%);
+}
+

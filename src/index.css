@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 50 100% 50%;
+    --secondary-foreground: 0 0% 20%;
+
+    --muted: 140 40% 85%;
+    --muted-foreground: 140 30% 35%;
+
+    --accent: 50 100% 50%;
+    --accent-foreground: 240 10% 3.9%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 40% 85%;
+    --input: 0 0% 100%;
+    --ring: 142 76% 36%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(50 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(140 85% 50%), hsl(50 100% 50%));
+    --gradient-bg: linear-gradient(180deg, hsl(0 0% 100%), hsl(140 40% 95%));
+    
+    --shadow-soft: 0 2px 8px hsla(142, 76%, 36%, 0.1);
+    --shadow-medium: 0 8px 16px hsla(142, 76%, 36%, 0.15);
+    --shadow-strong: 0 12px 32px hsla(142, 76%, 36%, 0.25);
+    --shadow-glow: 0 0 30px hsla(142, 76%, 36%, 0.3);
+
+    --eco-green: 142 76% 36%;
+    --eco-light: 140 85% 50%;
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 142 76% 36%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(50 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(140 85% 50%), hsl(50 100% 50%));
+    --gradient-bg: linear-gradient(180deg, hsl(222 47% 11%), hsl(217 33% 17%));
+    
+    --shadow-soft: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+    --shadow-medium: 0 8px 16px hsla(0, 0%, 0%, 0.4);
+    --shadow-strong: 0 12px 32px hsla(0, 0%, 0%, 0.5);
+    --shadow-glow: 0 0 30px hsla(142, 76%, 36%, 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Google Translate Widget Styling */
+#google_translate_element {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  z-index: 9998;
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(140 85% 50%));
+  padding: 10px 14px;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+#google_translate_element:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.dark #google_translate_element {
+  background: linear-gradient(135deg, hsl(142 76% 36%), hsl(140 85% 50%));
+}
+
+/* Style the select dropdown */
+#google_translate_element select {
+  background: white;
+  border: none;
+  color: hsl(142 76% 36%);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#google_translate_element select:hover {
+  background: hsl(0 0% 98%);
+}
+
+.dark #google_translate_element select {
+  background: hsl(222 47% 20%);
+  color: white;
+}
+
+.dark #google_translate_element select:hover {
+  background: hsl(222 47% 25%);
+}
+
+/* Show the gadget properly */
+.goog-te-gadget {
+  color: white !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+.goog-te-gadget img {
+  display: inline-block !important;
+  margin-right: 4px !important;
+  vertical-align: middle !important;
+}
+
+/* Hide only the "Powered by" text but keep functionality */
+.goog-te-gadget .goog-te-gadget-simple {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value {
+  color: white !important;
+  font-weight: 600 !important;
+}
+
+.goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value span {
+  color: white !important;
+}
+
+.dark .goog-te-gadget .goog-te-gadget-simple .goog-te-menu-value {
+  color: white !important;
+}
+
+/* Hide Google Translate banner and branding */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+  position: relative !important;
+}
+
+/* Hide the top bar frame that appears after translation */
+body > .skiptranslate:first-child {
+  display: none !important;
+}
+
+.skiptranslate iframe {
+  visibility: hidden !important;
+  height: 0 !important;
+}
+
+/* Keep the translate element visible */
+#google_translate_element .skiptranslate {
+  display: block !important;
+}
+
+
