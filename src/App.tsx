@@ -20,7 +20,10 @@ import CreateJob from "./pages/CreateJob";
 import JobDetail from "./pages/JobDetail";
 import AiChat from "./pages/AiChat";
 
+import { DonateButton } from "@/components/DonateButton";
+
 const queryClient = new QueryClient();
+
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -28,6 +31,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <DonateButton />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
